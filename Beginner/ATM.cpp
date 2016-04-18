@@ -1,33 +1,16 @@
 #include <iostream>
 using namespace std;
 
-int L[200],R[200];
+int main() {
+  int centwithdrawal; cin >> centwithdrawal; centwithdrawal=centwithdrawal*100;
+  float dollarbalance; cin >> dollarbalance;
+  int centbalance = dollarbalance*100;
 
-void solve() {
-    int n;
-    cin>>n;
-    for(int i=0 ; i< n ; i++) {
-        scanf("%d", &L[i]);
-    }
-    int m=0;
-    for(int i=0 ; i< n ; i++) {
-        scanf("%d", &R[i]);
-        int c=L[i]*R[i];
-        int d = L[m]*R[m];
-        if (c>d || (c==d && R[i]>R[m])) {
-            m=i;
-        }
-    }
-    cout<<m+1<<endl;
-}
+  if(centwithdrawal%500==0 && (centbalance-centwithdrawal-50)>=0){
+    cout << int(centbalance-centwithdrawal-50)/100 << "." << (centbalance-centwithdrawal-50)%100 << (centbalance-centwithdrawal-50)%10;
+  }
+  else{
+    cout << (centbalance/100) << "." << centbalance%100 << centbalance%10;
+  }
 
-int main(int argc, const char **argv) {
-    if(argc>=2) {
-        freopen(argv[1], "r", stdin);
-    }
-    int T;
-    cin>>T;
-    for(int t=1 ; t<=T ; t++) {
-        solve();
-    }
 }
