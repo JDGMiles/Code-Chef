@@ -2,22 +2,14 @@
 #include <cmath>
 using namespace std;
 
-int fives(int rawnumber){
-  int power=1;
-  int count=0;
-  while(pow(5, power)<=rawnumber){
-    count += rawnumber/pow(5, power);
-    power++;
-  }
-  return count;
-}
-
 int main() {
-  int n;
-  cin >> n;
-  int numbertobeanalysed=0;
-  for(int i=0; i<n; i++){
-    cin >> numbertobeanalysed;
-    cout << fives(numbertobeanalysed) << endl;
+  int upto=100;
+  int maxdigits=158;
+  char table[upto][maxdigits];
+  for(int i=0; i<upto; i++){
+    for(int j=0; j<maxdigits; j++){
+      table[i][j]=0;
+    }
   }
+  table[0][158]=1;
 }
