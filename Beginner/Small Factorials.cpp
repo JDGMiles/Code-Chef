@@ -6,6 +6,8 @@ int main() {
   int upto=101;
   int maxdigits=160;
   bool leadingzeros=1;
+  int testcases=0;
+  int seed=0;
 
   int table[upto][maxdigits];
   for(int i=0; i<upto; i++){
@@ -26,12 +28,13 @@ int main() {
       table[i][j]=table[i][j]%10;
     }
   }
-  for(int i=0; i<upto; i++){
-    cout << i << "! = ";
+  cin >> testcases;
+  for(int i=0; i<testcases; i++){
+    cin >> seed;
     leadingzeros=1;
     for(int j=0; j<maxdigits; j++){
-      if(leadingzeros==1 && table[i][j] != 0){leadingzeros=0;}
-      if(leadingzeros==0){cout << table[i][j];}
+      if(leadingzeros==1 && table[seed][j] != 0){leadingzeros=0;}
+      if(leadingzeros==0){cout << table[seed][j];}
     }
     cout << endl;
   }
