@@ -2,8 +2,11 @@
 using namespace std;
 
 int main() {
-  int centwithdrawal; cin >> centwithdrawal; centwithdrawal=centwithdrawal*100;
-  float dollarbalance; cin >> dollarbalance;
+  int centwithdrawal;
+  cin >> centwithdrawal;
+  centwithdrawal=centwithdrawal*100;
+  float dollarbalance;
+  cin >> dollarbalance;
   int centbalance = dollarbalance*100;
 
   if(centwithdrawal%500==0 && (centbalance-centwithdrawal-50)>=0){
